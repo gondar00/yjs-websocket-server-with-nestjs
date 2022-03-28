@@ -1,0 +1,27 @@
+{
+  "version": "1.0.6",
+  "name": "example",
+  "description": "An example project for y-presence",
+  "author": "@nimeshnayaju",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nimeshnayaju/y-presence.git"
+  },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node scripts/dev.mjs -w",
+    "build": "node scripts/build.mjs"
+  },
+  "files": [],
+  "devDependencies": {
+    "esbuild-serve": "^1.0.1",
+    "react": ">=16.8",
+    "react-dom": ">=16.8",
+    "yjs": "^13.5.32"
+  },
+  "dependencies": {
+    "y-presence": "^1.0.6",
+    "y-websocket": "^1.4.0"
+  }
+}
