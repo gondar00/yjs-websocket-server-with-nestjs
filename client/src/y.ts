@@ -5,7 +5,7 @@ import * as Y from 'yjs';
 export const doc = new Y.Doc();
 
 // Create a websocket provider
-export const provider = new WebsocketProvider('ws://localhost:5001', '', doc);
+export const provider = new WebsocketProvider('ws://localhost:5001', 'yjs', doc);
 
 // Export the provider's awareness API
 export const awareness = provider.awareness;
