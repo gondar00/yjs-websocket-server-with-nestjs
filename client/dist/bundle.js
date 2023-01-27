@@ -405,9 +405,9 @@
               case REACT_LAZY_TYPE: {
                 var lazyComponent = type;
                 var payload = lazyComponent._payload;
-                var init = lazyComponent._init;
+                var init2 = lazyComponent._init;
                 try {
-                  return getComponentName(init(payload));
+                  return getComponentName(init2(payload));
                 } catch (x) {
                   return null;
                 }
@@ -1076,15 +1076,15 @@
           var dispatcher = resolveDispatcher();
           return dispatcher.useState(initialState);
         }
-        function useReducer(reducer, initialArg, init) {
+        function useReducer(reducer, initialArg, init2) {
           var dispatcher = resolveDispatcher();
-          return dispatcher.useReducer(reducer, initialArg, init);
+          return dispatcher.useReducer(reducer, initialArg, init2);
         }
         function useRef2(initialValue) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useRef(initialValue);
         }
-        function useEffect(create7, deps) {
+        function useEffect2(create7, deps) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useEffect(create7, deps);
         }
@@ -1347,9 +1347,9 @@
               case REACT_LAZY_TYPE: {
                 var lazyComponent = type;
                 var payload = lazyComponent._payload;
-                var init = lazyComponent._init;
+                var init2 = lazyComponent._init;
                 try {
-                  return describeUnknownElementTypeFrameInDEV(init(payload), source, ownerFn);
+                  return describeUnknownElementTypeFrameInDEV(init2(payload), source, ownerFn);
                 } catch (x) {
                 }
               }
@@ -1654,7 +1654,7 @@
         exports.useCallback = useCallback;
         exports.useContext = useContext;
         exports.useDebugValue = useDebugValue;
-        exports.useEffect = useEffect;
+        exports.useEffect = useEffect2;
         exports.useImperativeHandle = useImperativeHandle;
         exports.useLayoutEffect = useLayoutEffect;
         exports.useMemo = useMemo;
@@ -3286,9 +3286,9 @@
               case REACT_LAZY_TYPE: {
                 var lazyComponent = type;
                 var payload = lazyComponent._payload;
-                var init = lazyComponent._init;
+                var init2 = lazyComponent._init;
                 try {
-                  return describeUnknownElementTypeFrameInDEV(init(payload), source, ownerFn);
+                  return describeUnknownElementTypeFrameInDEV(init2(payload), source, ownerFn);
                 } catch (x) {
                 }
               }
@@ -3388,9 +3388,9 @@
               case REACT_LAZY_TYPE: {
                 var lazyComponent = type;
                 var payload = lazyComponent._payload;
-                var init = lazyComponent._init;
+                var init2 = lazyComponent._init;
                 try {
-                  return getComponentName(init(payload));
+                  return getComponentName(init2(payload));
                 } catch (x) {
                   return null;
                 }
@@ -12899,11 +12899,11 @@
         function basicStateReducer(state, action) {
           return typeof action === "function" ? action(state) : action;
         }
-        function mountReducer(reducer, initialArg, init) {
+        function mountReducer(reducer, initialArg, init2) {
           var hook = mountWorkInProgressHook();
           var initialState;
-          if (init !== void 0) {
-            initialState = init(initialArg);
+          if (init2 !== void 0) {
+            initialState = init2(initialArg);
           } else {
             initialState = initialArg;
           }
@@ -12917,7 +12917,7 @@
           var dispatch = queue.dispatch = dispatchAction.bind(null, currentlyRenderingFiber$1, queue);
           return [hook.memoizedState, dispatch];
         }
-        function updateReducer(reducer, initialArg, init) {
+        function updateReducer(reducer, initialArg, init2) {
           var hook = updateWorkInProgressHook();
           var queue = hook.queue;
           if (!(queue !== null)) {
@@ -13005,7 +13005,7 @@
           var dispatch = queue.dispatch;
           return [hook.memoizedState, dispatch];
         }
-        function rerenderReducer(reducer, initialArg, init) {
+        function rerenderReducer(reducer, initialArg, init2) {
           var hook = updateWorkInProgressHook();
           var queue = hook.queue;
           if (!(queue !== null)) {
@@ -13634,13 +13634,13 @@
                 ReactCurrentDispatcher$1.current = prevDispatcher;
               }
             },
-            useReducer: function(reducer, initialArg, init) {
+            useReducer: function(reducer, initialArg, init2) {
               currentHookNameInDev = "useReducer";
               mountHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnMountInDEV;
               try {
-                return mountReducer(reducer, initialArg, init);
+                return mountReducer(reducer, initialArg, init2);
               } finally {
                 ReactCurrentDispatcher$1.current = prevDispatcher;
               }
@@ -13728,13 +13728,13 @@
                 ReactCurrentDispatcher$1.current = prevDispatcher;
               }
             },
-            useReducer: function(reducer, initialArg, init) {
+            useReducer: function(reducer, initialArg, init2) {
               currentHookNameInDev = "useReducer";
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnMountInDEV;
               try {
-                return mountReducer(reducer, initialArg, init);
+                return mountReducer(reducer, initialArg, init2);
               } finally {
                 ReactCurrentDispatcher$1.current = prevDispatcher;
               }
@@ -13822,13 +13822,13 @@
                 ReactCurrentDispatcher$1.current = prevDispatcher;
               }
             },
-            useReducer: function(reducer, initialArg, init) {
+            useReducer: function(reducer, initialArg, init2) {
               currentHookNameInDev = "useReducer";
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnUpdateInDEV;
               try {
-                return updateReducer(reducer, initialArg, init);
+                return updateReducer(reducer, initialArg, init2);
               } finally {
                 ReactCurrentDispatcher$1.current = prevDispatcher;
               }
@@ -13916,13 +13916,13 @@
                 ReactCurrentDispatcher$1.current = prevDispatcher;
               }
             },
-            useReducer: function(reducer, initialArg, init) {
+            useReducer: function(reducer, initialArg, init2) {
               currentHookNameInDev = "useReducer";
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnRerenderInDEV;
               try {
-                return rerenderReducer(reducer, initialArg, init);
+                return rerenderReducer(reducer, initialArg, init2);
               } finally {
                 ReactCurrentDispatcher$1.current = prevDispatcher;
               }
@@ -14017,14 +14017,14 @@
                 ReactCurrentDispatcher$1.current = prevDispatcher;
               }
             },
-            useReducer: function(reducer, initialArg, init) {
+            useReducer: function(reducer, initialArg, init2) {
               currentHookNameInDev = "useReducer";
               warnInvalidHookAccess();
               mountHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnMountInDEV;
               try {
-                return mountReducer(reducer, initialArg, init);
+                return mountReducer(reducer, initialArg, init2);
               } finally {
                 ReactCurrentDispatcher$1.current = prevDispatcher;
               }
@@ -14126,14 +14126,14 @@
                 ReactCurrentDispatcher$1.current = prevDispatcher;
               }
             },
-            useReducer: function(reducer, initialArg, init) {
+            useReducer: function(reducer, initialArg, init2) {
               currentHookNameInDev = "useReducer";
               warnInvalidHookAccess();
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnUpdateInDEV;
               try {
-                return updateReducer(reducer, initialArg, init);
+                return updateReducer(reducer, initialArg, init2);
               } finally {
                 ReactCurrentDispatcher$1.current = prevDispatcher;
               }
@@ -14235,14 +14235,14 @@
                 ReactCurrentDispatcher$1.current = prevDispatcher;
               }
             },
-            useReducer: function(reducer, initialArg, init) {
+            useReducer: function(reducer, initialArg, init2) {
               currentHookNameInDev = "useReducer";
               warnInvalidHookAccess();
               updateHookTypesDev();
               var prevDispatcher = ReactCurrentDispatcher$1.current;
               ReactCurrentDispatcher$1.current = InvalidNestedHooksDispatcherOnUpdateInDEV;
               try {
-                return rerenderReducer(reducer, initialArg, init);
+                return rerenderReducer(reducer, initialArg, init2);
               } finally {
                 ReactCurrentDispatcher$1.current = prevDispatcher;
               }
@@ -14456,9 +14456,9 @@
               if (outerMemoType.$$typeof === REACT_LAZY_TYPE) {
                 var lazyComponent = outerMemoType;
                 var payload = lazyComponent._payload;
-                var init = lazyComponent._init;
+                var init2 = lazyComponent._init;
                 try {
-                  outerMemoType = init(payload);
+                  outerMemoType = init2(payload);
                 } catch (x) {
                   outerMemoType = null;
                 }
@@ -14776,8 +14776,8 @@
           var props = workInProgress2.pendingProps;
           var lazyComponent = elementType;
           var payload = lazyComponent._payload;
-          var init = lazyComponent._init;
-          var Component = init(payload);
+          var init2 = lazyComponent._init;
+          var Component = init2(payload);
           workInProgress2.type = Component;
           var resolvedTag = workInProgress2.tag = resolveLazyComponentTag(Component);
           var resolvedProps = resolveDefaultProps(Component, props);
@@ -20473,6 +20473,99 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var import_react7 = __toModule(require_react());
   var import_react_dom = __toModule(require_react_dom());
 
+  // src/app.tsx
+  var import_react6 = __toModule(require_react());
+
+  // node_modules/js-cookie/dist/js.cookie.mjs
+  /*! js-cookie v3.0.1 | MIT */
+  function assign(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        target[key] = source[key];
+      }
+    }
+    return target;
+  }
+  var defaultConverter = {
+    read: function(value) {
+      if (value[0] === '"') {
+        value = value.slice(1, -1);
+      }
+      return value.replace(/(%[\dA-F]{2})+/gi, decodeURIComponent);
+    },
+    write: function(value) {
+      return encodeURIComponent(value).replace(/%(2[346BF]|3[AC-F]|40|5[BDE]|60|7[BCD])/g, decodeURIComponent);
+    }
+  };
+  function init(converter, defaultAttributes) {
+    function set3(key, value, attributes) {
+      if (typeof document === "undefined") {
+        return;
+      }
+      attributes = assign({}, defaultAttributes, attributes);
+      if (typeof attributes.expires === "number") {
+        attributes.expires = new Date(Date.now() + attributes.expires * 864e5);
+      }
+      if (attributes.expires) {
+        attributes.expires = attributes.expires.toUTCString();
+      }
+      key = encodeURIComponent(key).replace(/%(2[346B]|5E|60|7C)/g, decodeURIComponent).replace(/[()]/g, escape);
+      var stringifiedAttributes = "";
+      for (var attributeName in attributes) {
+        if (!attributes[attributeName]) {
+          continue;
+        }
+        stringifiedAttributes += "; " + attributeName;
+        if (attributes[attributeName] === true) {
+          continue;
+        }
+        stringifiedAttributes += "=" + attributes[attributeName].split(";")[0];
+      }
+      return document.cookie = key + "=" + converter.write(value, key) + stringifiedAttributes;
+    }
+    function get(key) {
+      if (typeof document === "undefined" || arguments.length && !key) {
+        return;
+      }
+      var cookies = document.cookie ? document.cookie.split("; ") : [];
+      var jar = {};
+      for (var i = 0; i < cookies.length; i++) {
+        var parts = cookies[i].split("=");
+        var value = parts.slice(1).join("=");
+        try {
+          var foundKey = decodeURIComponent(parts[0]);
+          jar[foundKey] = converter.read(value, foundKey);
+          if (key === foundKey) {
+            break;
+          }
+        } catch (e) {
+        }
+      }
+      return key ? jar[key] : jar;
+    }
+    return Object.create({
+      set: set3,
+      get,
+      remove: function(key, attributes) {
+        set3(key, "", assign({}, attributes, {
+          expires: -1
+        }));
+      },
+      withAttributes: function(attributes) {
+        return init(this.converter, assign({}, this.attributes, attributes));
+      },
+      withConverter: function(converter2) {
+        return init(assign({}, this.converter, converter2), this.attributes);
+      }
+    }, {
+      attributes: {value: Object.freeze(defaultAttributes)},
+      converter: {value: Object.freeze(converter)}
+    });
+  }
+  var api = init(defaultConverter, {path: "/"});
+  var js_cookie_default = api;
+
   // src/components/Room.tsx
   var import_react5 = __toModule(require_react());
 
@@ -20668,9 +20761,6 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       });
     }));
   }
-
-  // src/app.tsx
-  var import_react6 = __toModule(require_react());
 
   // node_modules/lib0/map.js
   var create = () => new Map();
@@ -26413,22 +26503,13 @@ ${reason}`);
 
   // src/y.ts
   var doc2 = new Doc();
-  var provider = new WebsocketProvider("ws://localhost:5001", "", doc2);
+  var provider = new WebsocketProvider("ws://localhost:5001", "yjs", doc2);
   var awareness = provider.awareness;
 
   // src/app.tsx
   function App() {
-    import_react6.default.useEffect(() => {
-      const socket = new WebSocket("ws://localhost:5001");
-      socket.addEventListener("open", (event) => {
-        console.log("connection established", event);
-      });
-      socket.addEventListener("close", (event) => {
-        console.log("connection closed", event);
-      });
-      socket.addEventListener("error", (event) => {
-        console.log("WebSocket error: ", event);
-      });
+    (0, import_react6.useEffect)(() => {
+      js_cookie_default.set("roomName", "roomName");
     }, []);
     return /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "App"

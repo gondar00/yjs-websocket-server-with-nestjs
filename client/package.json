@@ -21,6 +21,7 @@
     "yjs": "^13.5.32"
   },
   "dependencies": {
+    "js-cookie": "^3.0.1",
     "y-presence": "^1.0.6",
     "y-websocket": "^1.4.0"
   }
